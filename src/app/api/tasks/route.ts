@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export interface Task {
     id: number;
@@ -9,4 +11,10 @@ const tasks: Task[] = [
     {id: 2, name: 'ランニング'}
 ];
 
-export const GET = async() => {}
+export const GET = async() => {
+    return NextResponse.json({ tasks }, {
+        status: 200
+    })
+};
+
+export const dynamic = 'force-dynamic';
